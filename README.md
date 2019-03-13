@@ -6,7 +6,7 @@ The core of this script comes from
 
 http://www.raspberryconnect.com/network/item/331-raspberry-pi-auto-wifi-hotspot-switch-no-internet-routing
 
-I liked to autohotspot, and took stuff from this and autohotspotN   
+I linked to autohotspot, and took stuff from this and autohotspotN   
 
 I am running stretch lite, and executing from a command line from an SSH through the ethernet to talk to the Pi until I could get the hotspot working
 
