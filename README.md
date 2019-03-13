@@ -25,7 +25,13 @@ My intent is make the static IP address for the hotspot the same as the assigned
 Notes on what is changed
 
 1) After getting hostapd, it was installing as masked, and you need to unmask it - this appears to be being addressed in the documentation, but it was an issue for me
-  after executing 'sudo apt-get install hostapd'     and then  ' sudo systemctl disable hostapd'   you then need to run  'sudo systemctl unmask hostapd' and then see if you can start hostapd with 'sudo systemctl status hostapd'   if it starts - shut it down again, but you now know it works
+Steps 
+'sudo apt-get install hostapd'
+'sudo systemctl disable hostapd'  - per the website
+'sudo systemctl unmask hostapd'
+'sudo systemctl enable hotapd'
+'sudo systemctl start hostapd'   make sure it starts...... and then
+'sudo systemctl disable hostapd' - so that the script can manage it
   
 2) The Autohotpot script was not reading the wifi networks correctly and I implemented a code change from a comment to "clean" the ssid.  the code I implemented is not fully liked by raspbian, but seems to do the trick
 
