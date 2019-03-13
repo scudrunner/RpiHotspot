@@ -22,7 +22,7 @@ I debugged this script on a Pi3 and intend to put it on a PI Zero W.  On the Pi3
 
 My intent is make the static IP address for the hotspot the same as the assigned IP address from the home network.  The home network router can usually be set to give a particular machine a the same IP address each time it connects
 
-Notes on what is changed
+# Notes on what is changed from the linked page
 
 1. After getting hostapd, it was installing as masked, and you need to unmask it - this appears to be being addressed in the documentation, but it was an issue for me
 Steps 
@@ -57,3 +57,5 @@ sudo autohotspotN
 ```
 
 after you create all the files, it will output information on the terminal for you to see what it is doing
+
+4. **_I am adding in code to support  omnipy - a very specific use case_**
