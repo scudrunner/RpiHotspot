@@ -24,9 +24,8 @@ My intent is make the static IP address for the hotspot the same as the assigned
 
 Notes on what is changed
 
-1) After getting hostapd, it was installing as masked, and you need to unmask it - this appears to be being addressed in the documentation, but it was an issue for me
+1. After getting hostapd, it was installing as masked, and you need to unmask it - this appears to be being addressed in the documentation, but it was an issue for me
 Steps 
-
 ```
 sudo apt-get install hostapd
 sudo systemctl disable hostapd  # per the website
@@ -36,22 +35,25 @@ sudo systemctl start hostapd   #make sure it starts...... and then
 sudo systemctl disable hostapd   # - so that the script can manage it
 ```
   
-2) The Autohotpot script was not reading the wifi networks correctly and I implemented a code change from a comment to "clean" the ssid.  the code I implemented is not fully liked by raspbian, but seems to do the trick
+2. The Autohotpot script was not reading the wifi networks correctly and I implemented a code change from a comment to "clean" the ssid.  the code I implemented is not fully liked by raspbian, but seems to do the trick
+  ```
+  cleanssid=$(echo $ssid | tr -d '\r')
+  ```
+  and change:
+  ```
+  if (echo "$ssidreply" | grep "$ssid") >/dev/null 2>&1 
+  ```
+  to:
+  ```
+  if (echo "$ssidreply" | grep $cleanssid) >/dev/null 2>&1
+  ```
 
- ```
- cleanssid=$(echo $ssid | tr -d '\r')
+3. My configuration files are not the same, and some are missing some details included by the original poster.  I do not assume mine are correct - they just seem to work right now
+
+
+if you type in 
+```
+sudo autohotspotN
 ```
 
- and change:
-```
-if (echo "$ssidreply" | grep "$ssid") >/dev/null 2>&1 
-```
- to:
- ```
- if (echo "$ssidreply" | grep $cleanssid) >/dev/null 2>&1
-```
-
-3) My configuration files are not the same, and some are missing some details included by the original poster.  I do not assume mine are correct - they just seem to work right now
-
-
-if you type in 'sudo autohotspotN' after you create all the files, it will output information on the terminal for you to see what it is doing
+after you create all the files, it will output information on the terminal for you to see what it is doing
