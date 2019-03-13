@@ -38,7 +38,9 @@ ssidsmac=("${ssids[@]}" "${mac[@]}") #combines ssid and MAC for checking
 createAdHocNetwork()
 {
     echo "Creating Hotspot"
-#added 2 lines from comments section this does not use the "$wifidev" and probably should
+    #systemctl stop omnipy.service #adding lines for omnipy - take out comment to try
+
+#added 2 lines from comments section 
     ifconfig "$wifidev" down  #added
     ifconfig "$wifidev" up #added
 
@@ -52,11 +54,13 @@ createAdHocNetwork()
     systemctl start dnsmasq
     systemctl start hostapd
     echo 1 > /proc/sys/net/ipv4/ip_forward
+	#systemctl start omnipy.service #adding lines for omnipy - take out comment to try
 }
 
 KillHotspot()
 {
     echo "Shutting Down Hotspot"
+	#systemctl stop omnipy.service #adding lines for omnipy - take out comment to try
     ip link set dev "$wifidev" down
 #adding lines from comments
     ifconfig "$wifidev" down
@@ -70,6 +74,7 @@ KillHotspot()
     ip addr flush dev "$wifidev"
     ip link set dev "$wifidev" up
     dhcpcd  -n "$wifidev" >/dev/null 2>&1
+    #systemctl start omnipy.service #adding lines for omnipy - take out comment to try
 }
 
 ChkWifiUp()
