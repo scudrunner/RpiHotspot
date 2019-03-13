@@ -1,5 +1,5 @@
 # RpiHotspot
-Raspberry PI Hotspot that auto-switches
+Raspberry PI Hotspot that auto-switcheing in support of omnipy  https://github.com/winemug/omnipy
 Notes
 
 The core of this script comes from 
