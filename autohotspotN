@@ -153,6 +153,8 @@ NoDevice()
 	exit 1
 }
 
+systemctl stop omnipy.service #adding lines for omnipy 
+
 FindSSID
 
 #Create Hotspot or connect to valid wifi networks
@@ -189,3 +191,4 @@ else #ssid or MAC address not in range
               createAdHocNetwork
        fi
 fi
+systemctl start omnipy.service #adding lines for omnipy
