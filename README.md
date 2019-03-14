@@ -35,7 +35,7 @@ sudo systemctl start hostapd   #make sure it starts...... and then
 sudo systemctl disable hostapd   # - so that the script can manage it
 ```
   
-2. The Autohotpot script was not reading the wifi networks correctly and I implemented a code change from a comment to "clean" the ssid.  the code I implemented is not fully liked by raspbian, but seems to do the trick
+2. The Autohotpot script was not reading the wifi networks correctly and I implemented a code change from a comment to "clean" the ssid.  the code I implemented is not fully liked by raspbian, but seems to do the trick (edit - I fixed a typo but have not tested it yet, may be good now)
   ```
   cleanssid=$(echo $ssid | tr -d '\r')
   ```
