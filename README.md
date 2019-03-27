@@ -69,4 +69,4 @@ this is where network info is stored
 
 IP settings in this build
 wired is 192.168.1.1
-wireless on LLtest is 192.168.4.1
+wireless on test is 192.168.4.1
