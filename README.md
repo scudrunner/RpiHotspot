@@ -59,3 +59,14 @@ sudo autohotspotN
 after you create all the files, it will output information on the terminal for you to see what it is doing
 
 4. **_I am adding in code to support  omnipy - a very specific use case_**
+
+
+because I am forgetfull....
+this is where network info is stored
+```
+ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+IP settings in this build
+wired is 192.168.1.1
+wireless on LLtest is 192.168.4.1
