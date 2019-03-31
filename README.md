@@ -70,3 +70,18 @@ this is where network info is stored
 IP settings in this build
 wired is 192.168.1.1
 wireless on test is 192.168.4.1
+
+
+
+additional stuff to work through
+
+sudo nano rc.loca
+add the following
+if [ -f /boot/recover.txt ] ; then
+rm /boot/recovery.txt
+sh /home/pi/omnipy/recovery.sh
+fi
+
+this should run a recovery script to turn on the hotspot
+
+
